@@ -3,15 +3,27 @@ export default{
     name: 'Header',
     data(){
         return{
-            isActiveHome: true
+            home: true,
+            about: false,
+            services: false
         }
     },
     methods:{
         alteraCorCabecalho(pagina){
-            var path = this.$route.path
-            console.log(path)
-            if(pagina == "/about" || path == "/about"){
-                this.isActiveHome = false;
+            if(pagina == '/about'){
+                this.about = true
+                this.home = false
+                this.services = false
+            }
+            else if(pagina == '/'){
+                this.about = false
+                this.home = true
+                this.services = false
+            }
+            else if(path == '/services'){
+                this.about = false
+                this.home = false
+                this.services = true
             }
         },
 
@@ -30,14 +42,23 @@ export default{
                      
         </div>
         <ul class="ul_header">
-            <RouterLink to="/"><li class="home" :class="{isActiveHome: isActiveHome}" >Home</li> </RouterLink>
-            <RouterLink @click="alteraCorCabecalho('/about')" to="/about"><li class="about">About</li></RouterLink>
-            <a href="/"><li class="services">Services</li></a>
+            <RouterLink @click="alteraCorCabecalho('/')" to="/">
+                <li :class="{home: home}"  >Home</li> 
+            </RouterLink>
+            <RouterLink @click="alteraCorCabecalho('/about')" to="/about">
+                <li :class="{about: about}" >About</li>
+            </RouterLink>
+            <!-- <RouterLink @click="alteraCorCabecalho()" to="/services">
+                <li :class="{services: services}">Services</li>
+            </RouterLink> -->
         </ul>
     </header>
 </template>
 
 <style scoped>
+.home, .about, .services{
+    color: #e8491d;
+}
 .header{
     display: flex;
     width: 100%;

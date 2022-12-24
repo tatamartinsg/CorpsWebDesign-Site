@@ -21,11 +21,11 @@
 }
 .div_pesquisa{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     height: 100px;
     font-family: Arial, Helvetica, sans-serif;
-    gap:200px;
+    gap:100px;
 }
 .h1_pesquisa{
     color: white;
@@ -57,13 +57,13 @@
         gap: 0;
     }
 }
-@media (max-width:640px){
+@media (max-width:350px){
     .h1_pesquisa{
-        font-size: 16px;
+        font-size: 19px;
         padding: 5px;
     }
 }
-@media (max-width: 440px){
+@media (max-width: 700px){
     .div_pesquisa{
         height: 130px;
         flex-direction: column;
