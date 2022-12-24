@@ -20,7 +20,7 @@ export default{
                 this.home = true
                 this.services = false
             }
-            else if(path == '/services'){
+            else if(pagina == '/services'){
                 this.about = false
                 this.home = false
                 this.services = true
@@ -48,9 +48,9 @@ export default{
             <RouterLink @click="alteraCorCabecalho('/about')" to="/about">
                 <li :class="{about: about}" >About</li>
             </RouterLink>
-            <!-- <RouterLink @click="alteraCorCabecalho()" to="/services">
+            <RouterLink @click="alteraCorCabecalho('/services')" to="/services">
                 <li :class="{services: services}">Services</li>
-            </RouterLink> -->
+            </RouterLink>
         </ul>
     </header>
 </template>

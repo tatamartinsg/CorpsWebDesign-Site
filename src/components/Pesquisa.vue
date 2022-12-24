@@ -25,7 +25,7 @@
     align-items: center;
     height: 100px;
     font-family: Arial, Helvetica, sans-serif;
-    gap:100px;
+    gap:180px;
 }
 .h1_pesquisa{
     color: white;
@@ -52,9 +52,9 @@
     padding: 5px;
 
 }
-@media (max-width:850px){
+@media (max-width:1349px){
     .div_pesquisa{
-        gap: 0;
+        gap: 50px;
     }
 }
 @media (max-width:350px){
@@ -69,6 +69,7 @@
         flex-direction: column;
         width: 90%;
         margin: 0 auto;
+        gap: 0;
     }
     .div_pesquisa_subscribe{
         flex-direction: column;
